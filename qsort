@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include <stdlib.h>
+int compare (const void* a,const void *b);
+int main(){
+	int arr[10]={1,5,6,4,9,10,2,66,4,5};
+	qsort(arr,10,sizeof(int),compare);
+	for(int i=0;i<10;i++) printf("%d ",arr[i]);
+	return 0;
+}
+int compare (const void* a,const void *b){
+	int *pa=(int *)a;
+	int *pb=(int *)b;
+	int num1=*pa;
+	int num2=*pb;
+	return num1-num2;
+}
